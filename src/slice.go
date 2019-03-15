@@ -31,4 +31,14 @@ func main() {
 
 	fmt.Println(i[2:]) // 2 (index) ~ 마지막 까지 출력
 	fmt.Println(s)
+
+	source := []int{0, 1, 2}
+	target := make([]int, len(source), cap(source) * 2)
+
+	copy(target, source)
+
+	fmt.Println(target)
+	fmt.Println(source)
+
+	fmt.Println(len(source), cap(source), len(target), cap(target))
 }
