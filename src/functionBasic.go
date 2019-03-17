@@ -11,14 +11,14 @@ func main() {
 	var a, b uint = 3, 5
 
 	// 여러값을 return 받을 경우 차례로 변수에 담을 수 있다.
-	reulst, origin1, origin2 := addition(b, a)
+	result, origin1, origin2 := addition(a, b)
 
 	// 변수에 할당 가능
 	multiplication := func(i1 int, i2 int) int {
 		return i1 * i2
 	}
 
-	fmt.Printf("Result: %d, Origin1: %d, Origin2: %d \n", reulst, origin1, origin2)
+	fmt.Printf("Result: %d, Origin1: %d, Origin2: %d \n", result, origin1, origin2)
 	fmt.Printf("              Subtraction Reulst: %d \n", calculate(func(x int, y int) int { return x - y }, 5, 3) )
 	fmt.Printf("           Multiplication Result: %d \n", multiplication(10, 10))
 	fmt.Printf("                 Division Reulst: %d \n", division(func(x int, y int) int { return x / y }, 10, 5) )

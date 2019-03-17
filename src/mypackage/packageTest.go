@@ -1,4 +1,4 @@
-package testlib
+package mypackage
 
 var helloMessage map[string]string
 
