@@ -32,10 +32,10 @@ func main() {
 	switch err.(type) {
 	default: // no error
 
-	case myErr :
+	case myErr:
 		log.Println("My Error occurred:", err.Error())
 	case error:
 		log.Fatal(err.Error())
 	}
-	
+
 }

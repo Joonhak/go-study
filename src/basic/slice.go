@@ -33,7 +33,7 @@ func main() {
 	fmt.Println(s)
 
 	source := []int{0, 1, 2}
-	target := make([]int, len(source), cap(source) * 2)
+	target := make([]int, len(source), cap(source)*2)
 
 	copy(target, source)
 

@@ -6,12 +6,12 @@ import "fmt"
  * map - `Hash table`을 구현한 자료구조
  */
 func main() {
-	var _ map[int]string           // 선언
-	idMap := make(map[int]string)  // 선언
-	initMap := map[string]string { // 선언과 리터럴 초기화
-		"key" : "value",
-		"like" : "json",
-		"python" : "dict",
+	var _ map[int]string          // 선언
+	idMap := make(map[int]string) // 선언
+	initMap := map[string]string{ // 선언과 리터럴 초기화
+		"key":    "value",
+		"like":   "json",
+		"python": "dict",
 	}
 
 	idMap[0] = "Apple"

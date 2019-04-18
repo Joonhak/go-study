@@ -4,11 +4,11 @@ import "fmt"
 
 type person struct {
 	name string
-	age int
+	age  int
 	data map[string]int
 }
 
-func newPerson () *person {
+func newPerson() *person {
 	p := person{}
 	p.data = map[string]int{}
 	return &p
@@ -24,9 +24,9 @@ func main() {
 
 	// 선언과 동시에 초기화
 	p2 := person{
-		name : "joonhak",
-		age : 18,
-		data : map[string]int {"joonhak" : 18},
+		name: "joonhak",
+		age:  18,
+		data: map[string]int{"joonhak": 18},
 	}
 	p3 := person{"joonhak", 18, make(map[string]int)}
 

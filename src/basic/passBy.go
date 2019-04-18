@@ -24,4 +24,3 @@ func passByValue(str string) {
 func passByReference(str *string) {
 	*str = "Changed value!"
 }
-

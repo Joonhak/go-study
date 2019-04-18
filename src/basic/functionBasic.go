@@ -19,9 +19,9 @@ func main() {
 	}
 
 	fmt.Printf("Result: %d, Origin1: %d, Origin2: %d \n", result, origin1, origin2)
-	fmt.Printf("              Subtraction Reulst: %d \n", calculate(func(x int, y int) int { return x - y }, 5, 3) )
+	fmt.Printf("              Subtraction Reulst: %d \n", calculate(func(x int, y int) int { return x - y }, 5, 3))
 	fmt.Printf("           Multiplication Result: %d \n", multiplication(10, 10))
-	fmt.Printf("                 Division Reulst: %d \n", division(func(x int, y int) int { return x / y }, 10, 5) )
+	fmt.Printf("                 Division Reulst: %d \n", division(func(x int, y int) int { return x / y }, 10, 5))
 }
 
 // 한번에 여러 값 return 가능

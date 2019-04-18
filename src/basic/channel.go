@@ -19,7 +19,7 @@ func main() {
 	go func() { // 익명함수를 통한 `channel`에 data 전달
 		ch <- 12345
 	}()
-	go fmt.Println(<- ch) // 12345
+	go fmt.Println(<-ch) // 12345
 
 	go sendToChannel(ch, 123)
 	go receiveFromChannel(ch) // 123
@@ -30,14 +30,14 @@ func main() {
 	go func() {
 		for i := 0; i < count; i++ {
 			boolCh <- true
-			fmt.Println("Go routine: " , i + 1)
+			fmt.Println("Go routine: ", i+1)
 		}
 		boolCh <- true
 	}()
 
 	for i := 0; i < count; i++ {
-		<- boolCh // 해당 채널이 종료될때 까지 대기
-		fmt.Println("Main function: ", i + 1)
+		<-boolCh // 해당 채널이 종료될때 까지 대기
+		fmt.Println("Main function: ", i+1)
 	}
 
 	ch2 := make(chan int, 2)
@@ -47,10 +47,10 @@ func main() {
 
 	close(ch2)
 
-	fmt.Println(<- ch)
-	fmt.Println(<- ch)
+	fmt.Println(<-ch)
+	fmt.Println(<-ch)
 
-	if _, success := <- ch2; !success {
+	if _, success := <-ch2; !success {
 		fmt.Println("No more data")
 	}
 
@@ -63,23 +63,23 @@ func main() {
 
 }
 
-func sendToChannel(ch chan <- int, data int) { // 송신 전용 channel
+func sendToChannel(ch chan<- int, data int) { // 송신 전용 channel
 	ch <- data
 }
 
-func receiveFromChannel(ch <- chan int) { // 수신 전용 channel
-	fmt.Println(<- ch)
+func receiveFromChannel(ch <-chan int) { // 수신 전용 channel
+	fmt.Println(<-ch)
 }
 
-func channelRange(ch chan <- string) {
+func channelRange(ch chan<- string) {
 	for i := 0; i < 5; i++ {
-		ch <- "Send string data! " + strconv.Itoa(i + 1)
+		ch <- "Send string data! " + strconv.Itoa(i+1)
 	}
 
 	close(ch)
 }
 
-func receiveAfterClosed(ch <- chan string) {
+func receiveAfterClosed(ch <-chan string) {
 	for data := range ch { // range 문을 통해 `channel`이 종료되기 전까지 수신한다.
 		fmt.Println(data)
 	}
@@ -92,17 +92,17 @@ func channelSelect() {
 	go sleepOneSec(done1)
 	go sleepTwoSec(done2)
 
-	EXIT:
-		for {
-			select {
-			case <- done1:
-				fmt.Println("Channel 1 done.")
+EXIT:
+	for {
+		select {
+		case <-done1:
+			fmt.Println("Channel 1 done.")
 
-			case <- done2:
-				fmt.Println("Channel 2 done.")
-				break EXIT
-			}
+		case <-done2:
+			fmt.Println("Channel 2 done.")
+			break EXIT
 		}
+	}
 
 }
 

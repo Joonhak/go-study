@@ -41,7 +41,7 @@ func sayHi(s string, w *sync.WaitGroup) {
 		defer w.Done()
 	}
 
-	for i:= 0; i < 5; i++ {
-		fmt.Println(s, "Hi;", i + 1)
+	for i := 0; i < 5; i++ {
+		fmt.Println(s, "Hi;", i+1)
 	}
 }

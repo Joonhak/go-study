@@ -17,8 +17,8 @@ func main() {
 	println(next()) // -> 3
 
 	anotherNext := nextValue() // nextValue() 안의 i가 0으로 새로 초기화됨
-	println(anotherNext()) // -> 1
-	println(anotherNext()) // -> 2
+	println(anotherNext())     // -> 1
+	println(anotherNext())     // -> 2
 
 	println(next()) // -> 4 ( 유지됨 )
 }

@@ -1,6 +1,6 @@
 package main
 
-import "mypackage"
+import "basic/mypackage"
 
 func main() {
 	// semicolon 필요없음!
