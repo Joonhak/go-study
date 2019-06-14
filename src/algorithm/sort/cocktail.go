@@ -25,15 +25,16 @@ func main() {
 				arr[i + 1] = tmp
 			}
 		}
-		leftIndex++
 
-		for j := rightIndex; j >= leftIndex; j-- {
+		for j := rightIndex; j > leftIndex; j-- {
 			if arr[j] < arr[j - 1] {
 				tmp = arr[j]
 				arr[j] = arr[j - 1]
 				arr[j - 1] = tmp
 			}
 		}
+
+		leftIndex++
 		rightIndex--
 	}
 
