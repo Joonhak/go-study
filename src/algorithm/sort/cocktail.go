@@ -14,26 +14,27 @@ func main() {
 	fmt.Println("initial array: ", arr)
 
 	var tmp int
+	leftIndex := 0
+	rightIndex := len(arr) - 1
 
 	for i := 0; i < len(arr) / 2; i++ {
-		leftIndex := 0
-		rightIndex := len(arr) - 1
-
-		for leftIndex <= rightIndex  {
-			if arr[leftIndex] > arr[leftIndex + 1] {
-				tmp = arr[leftIndex]
-				arr[leftIndex] = arr[leftIndex + 1]
-				arr[leftIndex + 1] = tmp
+		for i := leftIndex; i < rightIndex; i++ {
+			if arr[i] > arr[i + 1] {
+				tmp = arr[i]
+				arr[i] = arr[i + 1]
+				arr[i + 1] = tmp
 			}
-			leftIndex++
-
-			if arr[rightIndex] < arr[rightIndex - 1] {
-				tmp = arr[rightIndex]
-				arr[rightIndex] = arr[rightIndex - 1]
-				arr[rightIndex - 1] = tmp
-			}
-			rightIndex--
 		}
+		leftIndex++
+
+		for j := rightIndex; j >= leftIndex; j-- {
+			if arr[j] < arr[j - 1] {
+				tmp = arr[j]
+				arr[j] = arr[j - 1]
+				arr[j - 1] = tmp
+			}
+		}
+		rightIndex--
 	}
 
 	fmt.Println("result: ", arr)
