@@ -1,4 +1,7 @@
 # go-study
 
-[예제로 배우는 GO 프로그래밍](http://golang.site/go/basics)  
-위 사이트의 예제들을 따라해보며 Golang을 학습한 `기록`를 남기는 Repository ( :D )
+Golang의 기본문법 및 알고리즘 학습기록
+
+## study source
+- [예제로 배우는 GO 프로그래밍](http://golang.site/go/basics)  
+- [GO로 구현해보는 알고리즘](https://www.inflearn.com/course/go#)
