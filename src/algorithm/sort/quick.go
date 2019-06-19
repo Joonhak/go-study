@@ -41,11 +41,12 @@ func quickSort(arr []int) []int {
 
 	quickSort(arr[:left])
 	quickSort(arr[left:])
-
 	return arr
 }
 
 func main() {
 	arr := []int{9, 1, 2, 8, 6, 7, 5, 3, 0, 4}
-	fmt.Println(quickSort(arr))
+	fmt.Println("initial array: ", arr)
+	quickSort(arr)
+	fmt.Println("result", arr)
 }
